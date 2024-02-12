@@ -1,67 +1,67 @@
-Certainly! Here is the README in pure Markdown format:
+# Flower Image Clustering
 
-```markdown
-# News Clustering
+This Flask application demonstrates clustering of flower images using machine learning techniques. It uses the VGG16 model for feature extraction, followed by KMeans clustering to group similar images together. The resulting clusters are then visualized in an interactive webpage.
 
-Welcome to News Clustering! This web application allows you to explore clusters of news articles through an informative lens. Each cluster represents a group of related articles, providing a structured way to navigate and discover content.
+## Demo
 
-Visit the live site: [News Clustering](https://news-clustering-qpml.onrender.com)
+Explore the clustered flower images live at [Flower Image Clustering](https://images-clustering-uxff.onrender.com).
+
+## Setup
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- Python
+- Flask
+- Keras
+- Scikit-learn
+- Numpy
+- Pickle
+
+You can install the required Python packages using:
+
+```bash
+pip install Flask Keras scikit-learn numpy
+```
+
+### Running the Application
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Kasparov2000/news-clustering.git
+```
+
+2. Change into the project directory:
+
+```bash
+cd news-clustering
+```
+
+3. Run the Flask application:
+
+```bash
+python app.py
+```
+
+The application will be accessible at [https://images-clustering-uxff.onrender.com](https://images-clustering-uxff.onrender.com) in your web browser.
 
 ## Features
 
-- **Clustered View:** Explore news articles organized into clusters for better content discovery.
-- **Clickable Articles:** Click on articles to read more about them.
-- **Custom Styling:** Intuitive and aesthetically pleasing design for a better user experience.
-- **Toggle Display:** Choose to show or hide images and descriptions for a streamlined view.
+- **Feature Extraction:** Uses the VGG16 model for extracting features from flower images.
+- **Clustering:** Applies KMeans clustering to group images based on visual similarities.
+- **Dimensionality Reduction:** Reduces the dimensionality of feature vectors using PCA.
+- **Interactive Visualization:** Provides an interactive webpage to explore clustered images.
 
-## How to Use
+## File Structure
 
-1. Visit the [News Clustering](https://news-clustering-qpml.onrender.com) website.
-2. Explore the clustered articles, organized by related content.
-3. Click on individual articles to read more.
-
-## Development
-
-If you want to run the project locally or contribute to its development, follow these steps:
-
-1. **Clone the repository:**
-
-   ```bash
-   git clone https://github.com/Kasparov2000/news-clustering.git
-   ```
-
-2. **Install dependencies:**
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Set up your News API key:**
-
-   - Obtain a News API key from [newsapi.org](https://newsapi.org/).
-   - Create a `.env` file in the project root and add your API key:
-
-     ```env
-     NEWS_API_KEY=your_api_key_here
-     ```
-
-4. **Run the Flask app:**
-
-   ```bash
-   python app.py
-   ```
-
-5. **Open your browser and go to [http://localhost:5000](http://localhost:5000) to view the app.**
-
-## Contributing
-
-Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or create a pull request.
+- `app.py`: The main Flask application.
+- `templates/index.html`: HTML template for rendering clustered images.
+- `flower_images/`: Folder containing the flower images dataset.
+- `static/`: Static files, including clustered images organized in directories.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-**Built with ❤️ by Tafara Kasparov Mhangami**
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ```
