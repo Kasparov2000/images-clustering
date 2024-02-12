@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clustered Flower Images</title>
+
+    <style>
+        body {
+            font-family: 'Helvetica', sans-serif;
+            background-color: #f5f5f5; /* Light background color */
+            margin: 20px;
+            line-height: 1.6; /* Adjust line height for better readability */
+            letter-spacing: 0.5px; /* Adjust letter spacing for better readability */
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #2196F3; /* Blue color for the heading */
+            font-family: 'Garamond', serif;
+            margin-bottom: 10px; /* Add margin to the bottom of the heading */
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            margin: 10px 0;
+            overflow-x: auto; /* Enable horizontal scrolling if needed */
+            white-space: nowrap; /* Prevent line breaks in the container */
+        }
+
+        .image-container img {
+            max-width: 600px; /* Increase image size to 2x larger (600px) */
+            max-height: 600px; /* Increase image size to 2x larger (600px) */
+            margin: 0 10px; /* Add some spacing between images */
+            border-radius: 10px; /* Add border radius to images */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Add transition for smooth effects */
+        }
+
+        .image-container img:hover {
+            transform: scale(1.1); /* Scale the image on hover */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Increase shadow darkness on hover */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Tafara Kasparov Mhangami - Clustered Flower Images</h1>
+</header>
+
+<p>
+    Explore clusters of flower images created through advanced machine learning techniques. This interactive visualization showcases the result of applying the VGG16 model for feature extraction, followed by KMeans clustering to group similar images together. Each cluster represents a distinct visual pattern detected by the model, providing a unique perspective on the dataset. Images are organized based on their visual similarities, creating an artistic representation of the underlying patterns within the flower images dataset.
+</p>
+
+{% if clustered_images %}
+    {% for cluster, images in clustered_images.items() %}
+        <h2>Cluster {{ cluster + 1}}</h2>
+        <div class="image-container">
+            {% for image in images %}
+                <img src="{{ url_for('static', filename='flower_images/cluster_' + (cluster + 1)|string + '/' + image) }}" alt="Cluster {{ cluster + 1 }} Image">
+            {% endfor %}
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No clustered images available.</p>
+{% endif %}
+
+</body>
+</html>
